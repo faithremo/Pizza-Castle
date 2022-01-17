@@ -56,38 +56,26 @@ orderPizza.prototype.priceOfDelivery = function () {
     }
 };
 // get user values
-// $(document).ready(function () {
-//     $(".custom").submit(function (event) {
-//         event.preventDefault();
-//         var size = $("#inputSize option:selected").val();
-//         var crust = $("#inputCrust option:selected").val();
-//         var toppings = $("#inputToppings option:selected").val();
-//         var numberOfPizza = parseInt($("#number").val());
-//         var delivery = $("#inputDelivery option:selected").val();
+$(document).ready(function () {
+    $(".custom").submit(function (event) {
+        event.preventDefault();
+        var size = $("#inputSize option:selected").val();
+        var crust = $("#inputCrust option:selected").val();
+        var toppings = $("#inputToppings option:selected").val();
+        var numberOfPizza = parseInt($("#number").val());
+        var delivery = $("#inputDelivery option:selected").val();
 
-//         var newOrderPizza = new orderPizza(size, crust, toppings, numberOfPizza, delivery);
-//         var totalPrice = (newOrderPizza.getSizePrice()+newOrderPizza.getCrustPrice()+newOrderPizza.getToppingsPrice())*numberOfPizza;
+        var newOrderPizza = new orderPizza(size, crust, toppings, numberOfPizza, delivery);
+        var totalPrice = (newOrderPizza.getSizePrice()+newOrderPizza.getCrustPrice()+newOrderPizza.getToppingsPrice())*numberOfPizza;
 
-//         window.alert("Hi! You have ordered "+numberOfPizza+ " " +size+ " pizzas, with a " + crust +" crust and "+toppings + " toppings!");
-//         window.alert("The total cost is  " + totalPrice + " /= " + " For Delivery services kindly fill the form below");
+        window.alert("Hi! You have ordered "+numberOfPizza+ " " +size+ " pizzas, with a " + crust +" crust and "+toppings + " toppings!");
+        window.alert("The total cost is  " + totalPrice + " /= " + " For Delivery services kindly fill the form below");
     
-//     $("#submit").click(function (event) {
-//         event.preventDefault();
-//         var keyedName = $("#inputName").val();
-//         var keyedAddress = $("#inputAddress").val();
-//         window.alert("Hey" + " " + keyedName + " " + " Your order will be ready in 25 mins and will be delivered to" + " " + keyedAddress + " " + "in the next 45 mins.")
-//         window.alert("Your total order will be " + (totalPrice + newOrderPizza.priceOfDelivery()));
-//     });});
-// });
-
-function orderup() {
-    let username = document.getElementById("#inputName".value)
-    let location = document.querySelector("#inputAdress".value)
-    alert("Hey" + "" + username + "your order will be ready and delivered to " + location + " in 30 mins")
-}
-
-const order_Btn = document.querySelector("#submit")
-
-order_Btn.addEventListener("click", orderup)
-
-
+    $("#submit").click(function (event) {
+        event.preventDefault();
+        var keyedName = $("#inputName").val();
+        var keyedAddress = $("#inputAddress").val();
+        window.alert("Hey" + " " + keyedName + " " + " Your order will be ready in 25 mins and will be delivered to" + " " + keyedAddress + " " + "in the next 45 mins.")
+        window.alert("Your total order will be " + (totalPrice + newOrderPizza.priceOfDelivery()));
+    });});
+});

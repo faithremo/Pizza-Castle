@@ -123,6 +123,12 @@ h4{
     margin-left: 200px;
     margin-bottom: 50px;
 }
+.order{
+    background-color:darkgoldenrod;
+}
+.address{
+    background-color: olivedrab;
+}
 
 #submit{
     margin-left: 200px;
