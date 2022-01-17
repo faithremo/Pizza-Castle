@@ -81,9 +81,13 @@ orderPizza.prototype.priceOfDelivery = function () {
 // });
 
 function orderup() {
-    alert("Faith")
+    let username = document.getElementById("#inputName".value)
+    let location = document.querySelector("#inputAdress".value)
+    alert("Hey" + "" + username + "your order will be ready and delivered to " + location + " in 30 mins")
 }
 
 const order_Btn = document.querySelector("#submit")
 
-order_Btn.addEventListener("click", orderup);
+order_Btn.addEventListener("click", orderup)
+
+
