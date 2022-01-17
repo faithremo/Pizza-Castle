@@ -22,7 +22,7 @@
         </ul>
     </div>
         <div class="msg">
-             <h1>About Us</h1>
+             <h1>About Us</h1><br>
              <h3>Try us For <br><br> Delicious ,Satisfying <br><br> burget friendly Pizzas!!!</h3><br>
              <h4>I Bet You will Not Resist Asking For More</h4>
         </div>
@@ -76,60 +76,88 @@
         <div class="order">
             <div class="head">
                 <h2>Your Order</h2>
+            <form class="custom">
                 <h3>Delivered To Your Door</h3>
+               
             </div>
+
+                
+                <select id="inputToppings" class="form-select col-md-6" required> 
+                    <option style="display:none;" selected>pick your flavour</option>              
+                    <option value ="ChickenTikka">Chicken Tikka @ 150 KES</option>
+                    <option value ="BBQSteak">BBQ Steak @ 100 KES</option>
+                    <option value ="ChickenandMushrooms">Chicken and Mushrooms @ 200 KES</option>
+                    <option value =">BeefBBQ">Beef BBQ @ 80 KES</option>
+                    <option value ="Hawaiian">Hawaiian @ 120 KES</option>
+                    <option value ="ChickenPeri-Perin">Chicken Peri-Peri @ 250 KES</option>
+                    <option value ="VegTikka">Veg Tikka @ 50 KES</option>
+                    <option value ="Regina">Regina @ 200 KES</option>
+                </select>
+    
+                <select id="inputCrust" class="form-select col-md-6" required>
+                    <option style="display:none;" selected>select crust</option>
+                    <option value ="stuffed">stuffed</option>
+                    <option value ="cripsy">cripsy</option>
+                    <option value ="gluten-free">gluten-free</option>
+                </select>
+    
+       
+                <select id="inputSize" class="form-select col-md-6" required>
+                   <option style="display:none;" selected>Choose pizza size</option>
+                   <option value ="small">small @ 500 KES</option>
+                   <option value ="medium">medium @ 800KES</option>
+                   <option value ="large">large @1000 KES</option>
+                   <option value ="x-large">extra large @1200 KES</option>
+               </select>          
+    
+               <div class="form-group mt-2">
+                <input type="number" id="number" class="form-control col-md-6" placeholder="Number of pizzas..." aria-label="number" required>
+            </div>
+            <div class="form-group mt-2">
+                <label for="inputdelivery" class="form-label"></label>
+                <select id="inputDelivery" class="form-select col-md-6" required>
+                    <option selected>Pick a delivery option</option>
+                    <option value="Hand">Hand-picked</option>
+                    <option value="Remote">Remote delivery</option>
+                </select>
+            </div><br>
+    
+               <div class="col-12">
+                   <button id="order" type="submit" class="btn btn-primary">Order Now</button>
+               </div>
+            </form>
             
-            <select class="choose"> 
-                <option style="display:none;" selected>pick your flavour</option>              
-                <option value ="Chicken Tikka">Chicken Tikka</option>
-                <option value ="BBQ Steak">BBQ Steak</option>
-                <option value ="Chicken and Mushrooms">Chicken and Mushrooms</option>
-                <option value =">Beef BBQ">Beef BBQ</option>
-                <option value ="Hawaiian">Hawaiian</option>
-                <option value ="Chicken Peri-Perin">Chicken Peri-Peri</option>
-                <option value ="Veg Tikka">Veg Tikka/option>
-                <option value ="Regina">Regina</option>
-            </select>
+            
 
-            <select class="choose md-">
-                <option style="display:none;" selected>select crust</option>
-                <option value ="stuffed">stuffed</option>
-                <option value ="cripsy">cripsy</option>
-                <option value ="gluten-free">gluten-free</option>
-            </select>
-   
-            <select class="choose">
-                <option style="display:none;" selected>Choose topping</option>
-                <option value ="sausage">sausage</option>
-                <option value ="onions">onions</option>
-                <option value ="tomato">tomato</option>
-            </select>
-   
-            <select class="choose">
-               <option style="display:none;" selected>Choose pizza size</option>
-               <option value ="small">small @ 500 KES</option>
-               <option value ="medium">medium @ 800KES</option>
-               <option value ="large">large @1000 KES</option>
-               <option value ="x-large">extra large @1200 KES</option>
-           </select>          
-
-           <select class="choose">
-            <option style="display:none;" selected>Number of Pizzas</option>
-            <option value ="1">1</option>
-            <option value ="2">2</option>
-            <option value ="3">3</option>
-            <option value ="4">4</option>
-            <option value ="5">5</option>
-            <option value ="6">6</option>
-            <option value ="7">7</option>
-            <option value ="8">8</option>
-            <option value ="9">9</option>
-            <option value ="10">10</option>
-           </select>
-
-           <div class="col-12">
-               <button id="order" type="submit" class="btn btn-primary">Order Now</button>
-           </div>
+           <div class="address">
+            <p id="customize">Enter your address</p>
+        <form class="row g-3">
+            <div class="col-md-12">
+                <input type="text" class="form-control col-md-6" id="inputName" placeholder="Input your Name">
+            </div>
+            <div class="col-md-12">
+                <input type="number" class="form-control col-md-6" id="inputNumber" placeholder="Phone number">
+            </div>
+            <div class="col-md-12">
+                <select id="inputCity" class="form-select col-md-6">
+                    <option style="display:none;" selected>Select your town</option>
+                    <option>Westlands</option>
+                    <option>Pipeline</option>
+                    <option>Rongai</option>
+                    <option>Kikuyu</option>
+                  </select>
+              </div>
+            <div class="col-12">
+              <input type="text" class="form-control col-md-6" id="inputAddress" placeholder="Put in your address">
+            </div>
+            <div class="col-12">
+              <input type="text" class="form-control col-md-6" id="inputAddress2" placeholder="Apartment name">
+            </div>
+            <div class="col-12">
+              <button id="submit" type="submit" class="btn btn-primary">Order Now</button>
+            </div>
+        </form>
+        </div>
 
 
         </div>
@@ -140,5 +168,7 @@
 
 
     <script src="js/jscript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 </body>
 </html>
