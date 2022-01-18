@@ -1,6 +1,6 @@
-//constructor for pizza orders
-class yourPizza {
-    constructor( toppings, numberOfPizza,size, delivery,crust) {
+// create object constructor for pizza orders
+class orderPizza {
+    constructor(size, crust, toppings, numberOfPizza, delivery) {
         this.size = size;
         this.crust = crust;
         this.toppings = toppings;
@@ -8,54 +8,54 @@ class yourPizza {
         this.delivery = delivery;
     }
 };
-//prototypes to get the prices of the pizza
-yourPizza.prototype.getSizePrice = function () {
+// create prototypes that calculates prices
+orderPizza.prototype.getSizePrice = function () {
     if (this.size === "small") {
-        return 400;
+        return 500;
     } else if (this.size === "medium") {
-        return 750;
+        return 800;
     } else if (this.size === "large") {
-        return 900;
+        return 1000;
     } else if (this.size === "x-large") {
-        return 1100;
-    }else { return "please fill in the missing field"
+        return 1200;
+    }else { return "choose an option"
 }};
-yourPizza.prototype.getCrustPrice = function () {
+orderPizza.prototype.getCrustPrice = function () {
     if (this.crust === "stuffed") {
-        return 100;
+        return 150;
     } else if (this.crust === "cripsy") {
-        return 150;
+        return 120;
     } else if (this.crust === "gluten-free") {
-        return 200;
-    } else{ return "please fill in the missing field"
-}};
-yourPizza.prototype.getToppingsPrice = function () {
-    if (this.toppings === "ChickenTikka") {
-        return 200;
-    } else if (this.toppings === "BBQSteak") {
-        return 150;
-    } else if (this.toppings === "ChickenandMushrooms") {
         return 250;
-    } else if (this.toppings === "BeefBBQ") {
-        return 100;
-    } else if (this.toppings === "Hawaiian") {
-        return 100;
-    } else if (this.toppings === "ChickenPeri-Perin") {
-        return 220;
-    } else if (this.toppings === "VegTikka") {
-        return 70;
-    } else if (this.toppings === "Regina") {
-        return 180;
-    }else{return "please fill in the missing field"
+    } else{ return "Choose an option"
 }};
-yourPizza.prototype.priceOfDelivery = function () {
+orderPizza.prototype.getToppingsPrice = function () {
+    if (this.toppings === "ChickenTikka") {
+        return 150;
+    } else if (this.toppings === "BBQSteak") {
+        return 100;
+    } else if (this.toppings === "ChickenandMushrooms") {
+        return 200;
+    } else if (this.toppings === "BeefBBQ") {
+        return 80;
+    } else if (this.toppings === "Hawaiian") {
+        return 120;
+    } else if (this.toppings === "ChickenPeri-Perin") {
+        return 250;
+    } else if (this.toppings === "VegTikka") {
+        return 50;
+    } else if (this.toppings === "Regina") {
+        return 200;
+    }else{return "Choose an option"
+}};
+orderPizza.prototype.priceOfDelivery = function () {
     if (this.delivery === "Hand") {
         return 0;
     } else if (this.delivery === "Remote") {
         return Math.floor(Math.random()*200);
     }
 };
-// user feedback
+// get user values
 $(document).ready(function () {
     $(".custom").submit(function (event) {
         event.preventDefault();
@@ -65,8 +65,8 @@ $(document).ready(function () {
         var numberOfPizza = parseInt($("#number").val());
         var delivery = $("#inputDelivery option:selected").val();
 
-        var newyourPizza = new yourPizza(size, crust, toppings, numberOfPizza, delivery);
-        var totalPrice = (newyourPizza.getSizePrice()+newyourPizza.getCrustPrice()+newyourPizza.getToppingsPrice())*numberOfPizza;
+        var newOrderPizza = new orderPizza(size, crust, toppings, numberOfPizza, delivery);
+        var totalPrice = (newOrderPizza.getSizePrice()+newOrderPizza.getCrustPrice()+newOrderPizza.getToppingsPrice())*numberOfPizza;
 
         window.alert("Hi! You have ordered "+numberOfPizza+ " " +size+ " pizzas, with a " + crust +" crust and "+toppings + " toppings!");
         window.alert("The total cost is  " + totalPrice + " /= " + " For Delivery services kindly fill the form below");
@@ -76,6 +76,6 @@ $(document).ready(function () {
         var keyedName = $("#inputName").val();
         var keyedAddress = $("#inputAddress").val();
         window.alert("Hey" + " " + keyedName + " " + " Your order will be ready in 25 mins and will be delivered to" + " " + keyedAddress + " " + "in the next 45 mins.");
-        window.alert("Your total order will be " + (totalPrice + newyourPizza.priceOfDelivery()));
+        window.alert("Your total order will be " + (totalPrice + newOrderPizza.priceOfDelivery()));
     });});
 });
